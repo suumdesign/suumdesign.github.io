@@ -143,7 +143,7 @@
         <div class="gallery-item-meta">Ritual 2020 – Discovery feature on iOS app</div>
       </div>
 
-      <div class="gallery-item" data-overlay="images/cineplex01.png,images/cineplex02.png,images/cineplex03.png,images/cineplex04.png" data-overlay-scroll="true">
+      <div class="gallery-item" data-overlay="images/cineplex01.png,images/cineplex02.png,images/cineplex03.png,images/cineplex04.png">
         <img src="images/cineplex02.png" loading="lazy" alt="Cineplex iPad app">
         <div class="gallery-item-meta">Pivotal Labs 2014 – Cineplex iPad app</div>
       </div>
@@ -163,7 +163,7 @@
         <div class="gallery-item-meta">Pivotal Labs 2013 – MEC responsive web</div>
       </div>
 
-      <div class="gallery-item" data-overlay="images/mdao_01.png,images/mdao_02.png,images/mdao_03.png,images/mdao_04.png,images/mdao_05.png,images/mdao_06.png" data-overlay-scroll="true">
+      <div class="gallery-item" data-overlay="images/mdao_01.png,images/mdao_02.png,images/mdao_03.png,images/mdao_04.png,images/mdao_05.png,images/mdao_06.png">
         <img src="images/mdao_02.png" loading="lazy" alt="Mood Disorder's Association 25th anniversary book">
         <div class="gallery-item-meta">Reactor Art and Design 2011 – Mood Disorder's Association 25th anniversary book</div>
       </div>
@@ -197,49 +197,33 @@
 
     document.querySelectorAll('.gallery-item').forEach(item => {
       item.addEventListener('click', () => {
-        const thumb  = item.querySelector('img');
-        const rect   = item.getBoundingClientRect();
+        const thumb   = item.querySelector('img');
+        const rect    = item.getBoundingClientRect();
         const originX = ((rect.left + rect.width  / 2) / window.innerWidth  * 100).toFixed(1);
         const originY = ((rect.top  + rect.height / 2) / window.innerHeight * 100).toFixed(1);
 
-        // Clear previous content
         galleryContent.innerHTML = '';
         galleryContent.className = '';
 
-        const overrideAttr = item.dataset.overlay;
-        if (overrideAttr && item.dataset.overlayScroll) {
-          // Scrollable multi-image strip
-          galleryContent.classList.add('multi-scroll');
-          const strip = document.createElement('div');
-          strip.className = 'overlay-scroll-strip';
-          overrideAttr.split(',').forEach(src => {
-            const img = document.createElement('img');
-            img.src = src.trim();
-            img.className = 'gallery-overlay-img-scroll';
-            strip.appendChild(img);
-          });
-          galleryContent.appendChild(strip);
-          // Drag to scroll
-          let isDown = false, startX, scrollLeft;
-          strip.addEventListener('mousedown', e => { isDown = true; startX = e.pageX - strip.offsetLeft; scrollLeft = strip.scrollLeft; strip.style.cursor = 'grabbing'; });
-          strip.addEventListener('mouseleave', () => { isDown = false; strip.style.cursor = 'grab'; });
-          strip.addEventListener('mouseup', () => { isDown = false; strip.style.cursor = 'grab'; });
-          strip.addEventListener('mousemove', e => { if (!isDown) return; e.preventDefault(); strip.scrollLeft = scrollLeft - (e.pageX - strip.offsetLeft - startX) * 1.5; });
-        } else if (overrideAttr) {
-          // Multi-image: show listed images side by side
+        if (item.dataset.overlay) {
+          // Multi-image: all overlays use the same scrollable row
           galleryContent.classList.add('multi');
-          overrideAttr.split(',').forEach(src => {
+          item.dataset.overlay.split(',').forEach(src => {
             const img = document.createElement('img');
             img.src = src.trim();
             img.className = 'gallery-overlay-img-multi';
             galleryContent.appendChild(img);
           });
+          // Convert vertical mouse wheel to horizontal scroll
+          galleryContent.addEventListener('wheel', e => {
+            if (e.deltaY !== 0) { e.preventDefault(); galleryContent.scrollLeft += e.deltaY; }
+          }, { passive: false });
         } else {
-          // Single image: show thumbnail at full size
+          // Single image
           const img = document.createElement('img');
-          img.src   = thumb.src;
-          img.alt   = thumb.alt;
-          img.id    = 'gallery-overlay-img';
+          img.src = thumb.src;
+          img.alt = thumb.alt;
+          img.id  = 'gallery-overlay-img';
           const wrapper = document.createElement('div');
           wrapper.id = 'gallery-img-wrapper';
           wrapper.appendChild(img);
