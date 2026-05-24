@@ -150,7 +150,7 @@ label {
 .navigation-item.current:hover { opacity: 0.8; color: #000; }
 .navigation-item.current:active { opacity: 0.7; color: #000; }
 
-/* hamburger button â€” hidden on desktop */
+/* hamburger button — hidden on desktop */
 .menu-button {
   display: none;
   cursor: pointer;
@@ -276,8 +276,8 @@ label {
 
 /* --- CSS Grids --- */
 
-/* Project overview: 4-col grid where H1 spans row 1 cols 1â€“3,
-   About spans row 2 cols 1â€“2, Contributions spans row 2 cols 3â€“4 */
+/* Project overview: 4-col grid where H1 spans row 1 cols 1–3,
+   About spans row 2 cols 1–2, Contributions spans row 2 cols 3–4 */
 .project-overview-grid {
   display: grid;
   grid-column-gap: 50px;
@@ -287,15 +287,15 @@ label {
   margin-bottom: 135px;
 }
 
-/* First child (heading) spans columns 1â€“3 in row 1 */
+/* First child (heading) spans columns 1–3 in row 1 */
 .project-overview-grid > :first-child {
   grid-area: 1 / 1 / 2 / 4;
 }
-/* Second child (About company) spans columns 1â€“2 in row 2 */
+/* Second child (About company) spans columns 1–2 in row 2 */
 .project-overview-grid > :nth-child(2) {
   grid-area: 2 / 1 / 3 / 3;
 }
-/* Third child (My Contributions) spans columns 3â€“4 in row 2 */
+/* Third child (My Contributions) spans columns 3–4 in row 2 */
 .project-overview-grid > :nth-child(3) {
   grid-area: 2 / 3 / 3 / 5;
 }
@@ -342,9 +342,9 @@ label {
 .banner-div---hide-on-desktop { display: none; }
 .seciton-hide { display: none; }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+/* ════════════════════════════════════════
    SCROLL REVEAL
-   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+   ════════════════════════════════════════ */
 
 .scroll-reveal {
   opacity: 0;
@@ -362,9 +362,9 @@ a.scroll-reveal {
   transform: translateY(0);
 }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+/* ════════════════════════════════════════
    GALLERY OVERLAY
-   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+   ════════════════════════════════════════ */
 
 .gallery-item {
   cursor: pointer;
@@ -424,7 +424,7 @@ a.scroll-reveal {
   overflow: hidden;
 }
 
-/* The permanent in-flow image â€” determines wrapper size */
+/* The permanent in-flow image — determines wrapper size */
 #gallery-overlay-img {
   display: block;
   height: 75vh;
@@ -433,7 +433,7 @@ a.scroll-reveal {
   max-height: 85vw; /* prevent stretching on narrow screens */
 }
 
-/* Multi-image overlay â€” scrollable row, same style as Apple Watch */
+/* Multi-image overlay — scrollable row, same style as Apple Watch */
 #gallery-overlay-content.multi {
   display: flex;
   flex-direction: row;
@@ -466,9 +466,9 @@ a.scroll-reveal {
   display: block;
 }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+/* ════════════════════════════════════════
    MAGAZINE LAYOUT (index page)
-   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+   ════════════════════════════════════════ */
 
 .magazine-section { margin-top: 0; }
 
@@ -493,7 +493,7 @@ a.scroll-reveal {
   padding-top: 260px;
 }
 
-/* Projects list â€” single column */
+/* Projects list — single column */
 .projects-list {
   display: flex;
   flex-direction: column;
@@ -526,7 +526,7 @@ a.scroll-reveal {
   margin: 0;
 }
 
-/* â”€â”€ Case study cards â”€â”€ */
+/* ── Case study cards ── */
 .case-study-list {
   display: flex;
   flex-direction: column;
@@ -559,7 +559,7 @@ a.scroll-reveal {
 .case-study-meta .label  { margin-top: 0; }
 .case-study-meta .heading { margin-top: 4px; margin-bottom: 0; }
 
-/* "Read case study" â€” underline draws itself in on card hover */
+/* "Read case study" — underline draws itself in on card hover */
 .read-link {
   display: inline-block;
   position: relative;
@@ -589,7 +589,7 @@ a.scroll-reveal {
   width: 100%;
 }
 
-/* â”€â”€ Design gallery grid â”€â”€ */
+/* ── Design gallery grid ── */
 .gallery-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -634,7 +634,7 @@ a.scroll-reveal {
   color: #000;
 }
 
-/* â”€â”€ Brand guidelines horizontal scroll â”€â”€ */
+/* ── Brand guidelines horizontal scroll ── */
 .brand-scroll-header {
   margin-bottom: 24px;
 }
@@ -682,9 +682,9 @@ a.scroll-reveal {
   object-fit: unset;
 }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-   RESPONSIVE â€” 991px
-   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+/* ════════════════════════════════════════
+   RESPONSIVE — 991px
+   ════════════════════════════════════════ */
 @media screen and (max-width: 991px) {
 
   /* Show hamburger, hide desktop menu */
@@ -750,9 +750,9 @@ a.scroll-reveal {
   }
 }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-   RESPONSIVE â€” 767px
-   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+/* ════════════════════════════════════════
+   RESPONSIVE — 767px
+   ════════════════════════════════════════ */
 @media screen and (max-width: 767px) {
 
   .section { margin-left: 15px; margin-right: 15px; }
@@ -781,7 +781,7 @@ a.scroll-reveal {
 
   /* Gallery drops to 2 columns on small screens */
   .gallery-grid { grid-template-columns: 1fr 1fr; gap: 12px 10px; }
-  .gallery-grid--4col { grid-template-columns: 1fr 1fr; gap: 24px 16px; }  /* 3-col â†’ 2-col on mobile */
+  .gallery-grid--4col { grid-template-columns: 1fr 1fr; gap: 24px 16px; }  /* 3-col → 2-col on mobile */
 
   .navigation { padding: 20px 30px; }
   .logo-link  { padding-left: 0; }
@@ -793,7 +793,7 @@ a.scroll-reveal {
   /* Illustration grid goes single column */
   .grid { grid-template-columns: 1fr; }
 
-  /* Single image overlay â€” natural ratio on mobile */
+  /* Single image overlay — natural ratio on mobile */
   #gallery-overlay-img {
     height: auto;
     width: 90vw;
@@ -801,7 +801,7 @@ a.scroll-reveal {
     max-height: none;
   }
 
-  /* Multi-image overlay â€” vertical stack on mobile */
+  /* Multi-image overlay — vertical stack on mobile */
   #gallery-overlay-content.multi {
     flex-direction: column;
     gap: 12px;
@@ -817,9 +817,9 @@ a.scroll-reveal {
   }
 }
 
-/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-   RESPONSIVE â€” 479px
-   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+/* ════════════════════════════════════════
+   RESPONSIVE — 479px
+   ════════════════════════════════════════ */
 @media screen and (max-width: 479px) {
 
   .heading-jumbo {
