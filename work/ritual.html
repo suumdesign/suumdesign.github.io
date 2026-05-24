@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ritual — Suum Design</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+  <nav class="navigation">
+    <div class="navigation-items">
+      <a href="../index.html" class="logo-link" aria-label="home">
+        <div class="text-block-3">suum.design</div>
+      </a>
+      <div class="navigation-wrap">
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="../index.html" class="navigation-item">Design</a></li>
+          <li><a href="../illustration.html" class="navigation-item">Illustration</a></li>
+          <li><a href="../about.html" class="navigation-item">About</a></li>
+        </ul>
+        <button class="menu-button" id="menu-btn" aria-label="menu" aria-expanded="false">
+          <img src="../images/menu-icon.png" width="22" alt="">
+        </button>
+      </div>
+    </div>
+    <div class="nav-overlay" id="nav-overlay">
+      <a href="../index.html" class="navigation-item">Design</a>
+      <a href="../illustration.html" class="navigation-item">Illustration</a>
+      <a href="../about.html" class="navigation-item">About</a>
+    </div>
+  </nav>
+
+  <!-- Overview -->
+  <div class="section">
+    <div class="container">
+      <div class="project-overview-grid">
+        <div>
+          <h1 class="heading-jumbo">Scheduled orders</h1>
+        </div>
+        <div>
+          <div class="position-name-text">About Ritual</div>
+          <div class="paragraph">Ritual is a social ordering platform that taps into networks of co-workers for fast and easy pickups and encourages people to order from local shops.</div>
+        </div>
+        <div>
+          <div class="position-name-text">My Contributions</div>
+          <div class="paragraph">I worked at Ritual as a senior UX designer in 2020 to 2022, managing multiple platforms and launched new features including scheduled orders, promotions and discounts and home screen discovery.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero image -->
+  <div class="section">
+    <img src="../images/ritual-main.jpg" alt="" class="detail-header-image">
+  </div>
+
+  <!-- 01 & 02 -->
+  <div class="section">
+    <div class="container">
+      <div class="project-description-grid">
+        <div>
+          <div class="position-name-text">01.<br>Addressing business needs</div>
+          <div class="paragraph">Transitioning from a pick up app to an online ordering platform.</div>
+        </div>
+        <div class="paragraph">
+          Ritual traditionally focused on servicing local merchants in downtown core areas, where office workers would pick up their lunch without having to wait in line. This changed during Covid, where many sit-down restaurants signed up for online ordering platforms due to dining restrictions. Some of these merchants had a strong demand for scheduled ordering, as their customers are accustomed to calling ahead to place their order.<br><br>
+          There were other business reasons to allow scheduled ordering. When Google directly integrated a food ordering service across multiple platforms, Ritual aimed to attain feature parity, which naturally included the ability to schedule orders. Ritual also had big plans for expanding services to building managers and companies, who would need to place big catering orders beforehand.
+        </div>
+      </div>
+
+      <div class="project-description-grid">
+        <div>
+          <div class="position-name-text">02.<br>Research</div>
+          <div class="paragraph">Scheduling an order can be simple yet complicated.</div>
+        </div>
+        <div class="paragraph">
+          In terms of UI design, scheduled ordering seemed like an easy problem to solve. Just add a new button that lets user choose a different pick up time! Easy, right?<br><br>
+          But what actually happens when consumers place an order for tomorrow? How much time do merchants need to prepare for a large order? What happens when Jane accepts an order for tomorrow, and John comes to work the next day and have no idea what to do? What if they have different menus for lunch and dinner?<br><br>
+          We came up with a research plan and spoke to 5 different merchants that have multiple online ordering service enabled. Here is what we learned:<br>
+          • Merchants print scheduled order receipts twice, at the time of order and when it's actually due<br>
+          • Many staffs get confused when receipt is not clearly labelled as scheduled<br>
+          • They want control over how early customers can order in case their menu changes<br>
+          • It should not distract staff from current operations<br>
+          • For large orders they need to check for adequate inventory of ingredients
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Blueprint image -->
+  <div class="section">
+    <img src="../images/ritual-blueprint.jpg" alt="" class="detail-header-image">
+  </div>
+
+  <!-- 03 & 04 -->
+  <div class="section">
+    <div class="container">
+      <h1 class="heading-jumbo">We created a product service blueprint to share with all involved departments.</h1>
+
+      <div class="project-description-grid">
+        <div>
+          <div class="position-name-text">03.<br>Designing for merchants</div>
+          <div class="paragraph">Happy merchant, happy customer.</div>
+        </div>
+        <div class="paragraph">
+          Our goal was to create an end-to-end experience for customers placing scheduled orders, while also considering the operational needs. Design team created a service blueprint for this project, and shared with Operations, QA and sales to help them understand how it all works together. Then we started building a solution for all involved platforms, following the existing design pattern.<br><br>
+          Here are the list of features for the merchant side:<br>
+          • Merchants can enable scheduled ordering on partner portal<br>
+          • Date range is configurable, defaulted to 7 days based on research<br>
+          • Added a new tab on the merchant device for current and scheduled orders<br>
+          • +5 min buffer time to send order and auto-reject after 10 mins<br>
+          • Added scheduled stamp on receipt<br>
+          • Added order status on Ritual's internal operations tool<br>
+          • Calculate earliest pick up time based on user's items in cart
+        </div>
+      </div>
+
+      <div class="project-description-grid">
+        <div>
+          <div class="position-name-text">04.<br>Addressing edge cases</div>
+          <div class="paragraph">and there are so many of them.</div>
+        </div>
+        <div class="paragraph">
+          TLDR: there are many of them. I'm listing them for my own enjoyment, because the design team sat down and came up with solutions for all of these before launch.<br><br>
+          Scheduled order is accepted, item out of stock last minute • Remind merchant to check stock before removing ability to cancel • If item is still out of stock, let merchant handle it directly with customers • Store busy or paused • Scheduled orders should still come through even when the store is not accepting new orders • Auto-reject if not accepted within 10 minutes • Handle stores temporarily closed or store on holiday hours • If merchant = down, auto reject right away and send customer cancellation emails • If 1 out of many are unavailable, merchant can connect with customer to cancel &amp; reorder • Users on depreciated devices will receive their scheduled orders on the device when the orders need to be accepted/rejected (based on prep time)
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Schedule images -->
+  <div class="section bottom-padding">
+    <img src="../images/ritual-schedule.jpg" alt="" class="detail-header-image">
+  </div>
+
+  <div class="section">
+    <img src="../images/ritual-schedule-platforms.jpg" alt="" class="detail-header-image">
+  </div>
+
+  <!-- 05 Results -->
+  <div class="section">
+    <div class="container">
+      <h1 class="heading-jumbo">Consumer facing UI may be simple, but a lot of UX work went into enabling this feature.</h1>
+
+      <div class="project-description-grid">
+        <div>
+          <div class="position-name-text">05.<br>Results</div>
+          <div class="paragraph">After our first launch</div>
+        </div>
+        <div class="paragraph">
+          We launched scheduled ordering for Google food ordering and Ritual online ordering first. The server work completed for this project would allow the same feature to be enabled on the Ritual mobile app. Here are some stats from our launch:<br><br>
+          Total number of scheduled orders: 29,795<br>
+          • 10,829 through Google ordering, 18,898 through online ordering<br>
+          • 23,675 merchants in the program<br>
+          • Over 6,000 merchants enrolled in scheduled order in Toronto<br><br>
+          Fun fact:<br>
+          First 2 weeks of launch (Jan 1 – Jan 14), Lee at Portland &amp; King had 22 scheduled orders out of 54, which makes up for 40% of their order volume. Average scheduled order makes up for 15% of total order.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="div-block-3"></div>
+
+  <script src="../nav.js"></script>
+  <script>
+    const btn = document.getElementById('menu-btn');
+    const overlay = document.getElementById('nav-overlay');
+    btn.addEventListener('click', () => {
+      const open = overlay.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open);
+    });
+  </script>
+</body>
+</html>

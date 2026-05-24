@@ -1,0 +1,898 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+  /* 100px until viewport hits 1440px, then grows to keep content centred */
+  --section-margin: max(100px, calc((100vw - 1240px) / 2));
+}
+
+html { height: 100%; }
+
+body {
+  margin: 0;
+  color: #000;
+  background-color: #fff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  min-height: 100%;
+}
+
+/* --- Base element resets matching Webflow --- */
+img { display: block; max-width: 100%; border: 0; }
+
+h1 {
+  margin-top: 20px;
+  margin-bottom: 15px;
+  font-size: 44px;
+  font-weight: 400;
+  line-height: 62px;
+}
+
+p { margin-top: 0; margin-bottom: 10px; }
+
+ul { margin-top: 20px; margin-bottom: 20px; padding-left: 40px; list-style-type: disc; }
+li { margin-bottom: 10px; }
+
+a {
+  color: #000;
+  text-decoration: underline;
+  transition: opacity .2s;
+  display: block;
+}
+a:hover { color: #000; }
+a:active { color: #000; }
+
+/* label HTML element (form labels) */
+label {
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+/* --- Float grid system --- */
+.w-row::before, .w-row::after { content: ' '; display: table; }
+.w-row::after { clear: both; }
+
+.w-col {
+  float: left;
+  width: 100%;
+  min-height: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative;
+}
+.w-col-6 { width: 50%; }
+
+/* --- Navigation --- */
+.navigation {
+  background-color: #fff;
+  align-items: center;
+  width: 100%;
+  padding: 30px var(--section-margin);
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.nav-hidden {
+  transform: translateY(-100%);
+}
+
+.navigation-items {
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+.logo-link {
+  text-decoration: none;
+  z-index: 1;
+}
+.logo-link:hover { opacity: 0.8; }
+.logo-link:active { opacity: 0.7; }
+
+.text-block-3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #000;
+}
+
+.navigation-wrap {
+  align-items: center;
+  margin-right: -20px;
+  display: flex;
+}
+
+/* desktop nav links */
+.nav-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation-item {
+  opacity: 0.6;
+  letter-spacing: 0;
+  text-transform: none;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20px;
+  text-decoration: none;
+  display: inline-block;
+  transition: opacity .2s;
+}
+.navigation-item:hover { opacity: 0.9; }
+.navigation-item:active { opacity: 0.8; }
+.navigation-item.current {
+  opacity: 1;
+  color: #000;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 400;
+}
+.navigation-item.current:hover { opacity: 0.8; color: #000; }
+.navigation-item.current:active { opacity: 0.7; color: #000; }
+
+/* hamburger button — hidden on desktop */
+.menu-button {
+  display: none;
+  cursor: pointer;
+  padding: 0;
+  background: none;
+  border: none;
+}
+.menu-button img { display: block; }
+
+/* mobile nav overlay */
+.nav-overlay {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #fff;
+  z-index: 999;
+}
+.nav-overlay.open { display: block; }
+.nav-overlay .navigation-item {
+  display: block;
+  text-align: center;
+  padding: 15px 30px;
+  transition: background-color .4s, opacity .4s, color .4s;
+}
+.nav-overlay .navigation-item:hover { background-color: #f7f8f9; }
+.nav-overlay .navigation-item:active { background-color: #eef0f3; }
+
+/* --- Layout --- */
+.section {
+  margin-left: var(--section-margin);
+  margin-right: var(--section-margin);
+  display: block;
+}
+.section.bottom-padding { margin-bottom: 20px; }
+.section.bottom-margin  { margin-bottom: 60px; }
+
+.container-landing {
+  max-width: 1400px;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container {
+  margin-bottom: 0;
+}
+
+/* --- Typography --- */
+.heading-jumbo {
+  text-transform: none;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 80px;
+}
+
+.heading-jumbo-small {
+  text-transform: none;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+.heading {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 130%;
+}
+
+.paragraph {
+  font-family: 'Crimson Text', sans-serif;
+  font-size: 18px;
+  line-height: 150%;
+}
+
+.paragraph-bigger {
+  opacity: 1;
+  margin-bottom: 10px;
+  font-family: 'Crimson Text', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+.position-name-text {
+  text-transform: none;
+  margin-bottom: 10px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 34px;
+}
+
+/* .label class (NOT the label HTML element) */
+.label {
+  letter-spacing: 0;
+  text-transform: none;
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 160%;
+  display: block;
+}
+
+.small { font-size: 80%; }
+
+/* --- Column utilities --- */
+.column   { padding-left: 0;   padding-right: 10px; }
+.column-2 { padding-left: 10px; padding-right: 0; }
+
+.columns         { margin-bottom: 60px; }
+.columns-gallery { margin-bottom: 10px; }
+
+/* --- CSS Grids --- */
+
+/* Project overview: 4-col grid where H1 spans row 1 cols 1–3,
+   About spans row 2 cols 1–2, Contributions spans row 2 cols 3–4 */
+.project-overview-grid {
+  display: grid;
+  grid-column-gap: 50px;
+  grid-row-gap: 100px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-top: 120px;
+  margin-bottom: 135px;
+}
+
+/* First child (heading) spans columns 1–3 in row 1 */
+.project-overview-grid > :first-child {
+  grid-area: 1 / 1 / 2 / 4;
+}
+/* Second child (About company) spans columns 1–2 in row 2 */
+.project-overview-grid > :nth-child(2) {
+  grid-area: 2 / 1 / 3 / 3;
+}
+/* Third child (My Contributions) spans columns 3–4 in row 2 */
+.project-overview-grid > :nth-child(3) {
+  grid-area: 2 / 3 / 3 / 5;
+}
+
+.project-description-grid {
+  display: grid;
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
+  grid-template-columns: 1fr 2.5fr;
+  margin-top: 120px;
+  margin-bottom: 120px;
+}
+
+.grid {
+  display: grid;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grid img {
+  width: 100%;
+  min-height: 200px; /* reserves layout space before lazy images load so IntersectionObserver detects correct positions */
+}
+
+/* --- Images --- */
+.detail-header-image { width: 100%; }
+.image { margin-bottom: 40px; }
+.image-about { margin-bottom: 40px; width: 100%; }
+
+/* --- Spacers --- */
+.div-block,
+.div-block-2,
+.div-block-3,
+.div-block-4,
+.div-block-5 { height: 100px; }
+
+/* --- Links --- */
+.link-block { text-decoration: none; }
+.link-block:hover { opacity: 0.85; }
+
+/* --- Misc --- */
+.banner-div---hide-on-desktop { display: none; }
+.seciton-hide { display: none; }
+
+/* ════════════════════════════════════════
+   SCROLL REVEAL
+   ════════════════════════════════════════ */
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+/* Ensure anchor tags (case study cards) use the full 0.9s reveal, not the 0.2s a:hover transition */
+a.scroll-reveal {
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ════════════════════════════════════════
+   GALLERY OVERLAY
+   ════════════════════════════════════════ */
+
+.gallery-item {
+  cursor: pointer;
+}
+
+#gallery-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  visibility: hidden;
+  transition: visibility 0s linear 0.2s; /* hide partway through close animation */
+}
+
+#gallery-overlay-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+#gallery-overlay.active {
+  pointer-events: all;
+  visibility: visible;
+  transition: visibility 0s linear 0s; /* show immediately on open */
+}
+
+#gallery-overlay.active #gallery-overlay-backdrop {
+  opacity: 1;
+}
+
+/* Wrapper scales up from thumbnail position */
+#gallery-overlay-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: scale(0.05);
+  transition: transform 0.45s cubic-bezier(0.34, 1.1, 0.64, 1);
+}
+
+#gallery-overlay.active #gallery-overlay-content {
+  transform: scale(1);
+}
+
+
+/* Clips the sliding images */
+#gallery-img-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+/* The permanent in-flow image — determines wrapper size */
+#gallery-overlay-img {
+  display: block;
+  height: 75vh;
+  width: auto;
+  max-width: 85vw;
+  max-height: 85vw; /* prevent stretching on narrow screens */
+}
+
+/* Multi-image overlay — side by side (2 images) */
+#gallery-overlay-content.multi {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  max-width: 85vw;
+}
+.gallery-overlay-img-multi {
+  display: block;
+  max-height: 75vh;
+  max-width: calc(42.5vw - 8px);
+  width: auto;
+  height: auto;
+}
+
+/* Scrollable multi-image overlay (4+ images) */
+#gallery-overlay-content.multi-scroll {
+  width: 85vw;
+}
+.overlay-scroll-strip {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  cursor: grab;
+  padding-bottom: 4px;
+}
+.overlay-scroll-strip::-webkit-scrollbar { display: none; }
+.gallery-overlay-img-scroll {
+  display: block;
+  height: 75vh;
+  width: auto;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+
+/* Dynamically created slide-in image (absolutely fills the wrapper) */
+.gallery-slide-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ════════════════════════════════════════
+   MAGAZINE LAYOUT (index page)
+   ════════════════════════════════════════ */
+
+.magazine-section { margin-top: 0; }
+
+.magazine-layout {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* 60% left, 40% right */
+.magazine-left  { flex: 3 1 0; min-width: 0; }
+.magazine-right { flex: 2 1 0; min-width: 0; }
+
+.magazine-col-heading {
+  margin-top: 0;
+  padding-top: 0;
+  margin-bottom: 32px;
+}
+
+/* Right-column headers */
+.magazine-right {
+  padding-top: 260px;
+}
+
+/* Projects list — single column */
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Spacing before the Design gallery subheader */
+.gallery-header--sub {
+  margin-top: 60px;
+}
+
+.gallery-header {
+  margin-bottom: 24px;
+}
+
+.gallery-label {
+  display: block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #000;
+  margin-bottom: 12px;
+}
+
+.gallery-rule {
+  border: none;
+  border-top: 1px solid #000;
+  margin: 0;
+}
+
+/* ── Case study cards ── */
+.case-study-list {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+.case-study-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.case-study-image-wrap {
+  overflow: hidden;
+  display: block;
+}
+
+.case-study-image-wrap img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.case-study-meta {
+  padding-top: 14px;
+}
+
+.case-study-meta .label  { margin-top: 0; }
+.case-study-meta .heading { margin-top: 4px; margin-bottom: 0; }
+
+/* "Read case study" — underline draws itself in on card hover */
+.read-link {
+  display: inline-block;
+  position: relative;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #000;
+  text-decoration: none;
+  margin-top: 12px;
+  line-height: 1.6;
+}
+
+.read-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #000;
+  transition: width 0.45s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.case-study-card:hover .read-link::after {
+  width: 100%;
+}
+
+/* ── Design gallery grid ── */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px 20px;
+}
+
+/* Full-width 4-column variant */
+.gallery-grid--4col {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px 20px;
+}
+
+.design-gallery-section {
+  margin-top: 80px;
+}
+
+.gallery-item img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.gallery-item-meta {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  font-weight: 200;
+  letter-spacing: 0;
+  text-transform: none;
+  color: #000;
+  opacity: 1;
+  margin-top: 8px;
+  margin-bottom: 2px;
+  line-height: 160%;
+}
+
+.gallery-item-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #000;
+}
+
+/* ── Brand guidelines horizontal scroll ── */
+.brand-scroll-header {
+  margin-bottom: 24px;
+}
+
+.brand-scroll-hint {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #999;
+  margin-top: 10px;
+  display: block;
+}
+
+.brand-scroll-outer {
+  margin-left: calc(-1 * var(--section-margin));
+  margin-right: calc(-1 * var(--section-margin));
+  margin-top: 0;
+}
+
+.brand-scroll {
+  display: flex;
+  gap: 3px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: var(--section-margin);
+  height: 60vh;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  cursor: grab;
+  padding-left: var(--section-margin);
+}
+
+.brand-scroll::-webkit-scrollbar { display: none; }
+.brand-scroll.is-grabbing { cursor: grabbing; user-select: none; }
+
+.brand-scroll-item {
+  scroll-snap-align: start;
+  flex: 0 0 auto;
+  height: 100%;
+  overflow: hidden;
+}
+
+.brand-scroll-item img {
+  height: 100%;
+  width: auto;
+  display: block;
+  aspect-ratio: unset;
+  object-fit: unset;
+}
+
+/* ════════════════════════════════════════
+   RESPONSIVE — 991px
+   ════════════════════════════════════════ */
+@media screen and (max-width: 991px) {
+
+  /* Show hamburger, hide desktop menu */
+  .nav-menu    { display: none; }
+  .menu-button { display: block; }
+
+  .navigation { padding: 25px 30px; }
+  .navigation-wrap { margin-right: 0; }
+  .navigation-items { background-color: #fff; }
+
+  .navigation-item {
+    text-align: center;
+    padding: 15px 30px;
+    transition: background-color .4s, opacity .4s, color .4s;
+  }
+  .navigation-item:hover  { background-color: #f7f8f9; }
+  .navigation-item:active { background-color: #eef0f3; }
+
+  .heading-jumbo {
+    text-align: left;
+    font-size: 56px;
+    line-height: 70px;
+  }
+
+  .container {
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: auto;
+    display: flex;
+  }
+
+  .position-name-text { text-align: left; }
+
+  /* Magazine layout stacks on tablet */
+  .magazine-layout {
+    flex-direction: column;
+    gap: 48px;
+  }
+  .magazine-left,
+  .magazine-right {
+    flex: none;
+    width: 100%;
+  }
+  .magazine-right { padding-top: 0; }
+
+  /* Project overview collapses to single column */
+  .project-overview-grid {
+    grid-row-gap: 50px;
+    grid-template-columns: 1fr;
+    width: 100%;
+    margin: 40px 0;
+  }
+  .project-overview-grid > :first-child  { grid-area: 1 / 1 / 2 / 2; }
+  .project-overview-grid > :nth-child(2) { grid-area: auto; grid-column-end: 2; }
+  .project-overview-grid > :nth-child(3) { grid-area: 3 / 1 / 4 / 2; }
+
+  .project-description-grid {
+    grid-row-gap: 50px;
+    grid-template-columns: 1fr;
+    width: 100%;
+    margin: 40px 0;
+  }
+}
+
+/* ════════════════════════════════════════
+   RESPONSIVE — 767px
+   ════════════════════════════════════════ */
+@media screen and (max-width: 767px) {
+
+  .section { margin-left: 15px; margin-right: 15px; }
+
+  .heading-jumbo {
+    text-align: left;
+    font-size: 50px;
+    line-height: 64px;
+  }
+
+  .heading-jumbo-small {
+    text-align: left;
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .label { text-align: left; }
+
+  .paragraph-bigger {
+    text-align: left;
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  .container { text-align: left; }
+
+  /* Gallery drops to 2 columns on small screens */
+  .gallery-grid { grid-template-columns: 1fr 1fr; gap: 12px 10px; }
+  .gallery-grid--4col { grid-template-columns: 1fr 1fr; gap: 24px 16px; }  /* 3-col → 2-col on mobile */
+
+  .navigation { padding: 20px 30px; }
+  .logo-link  { padding-left: 0; }
+
+  /* Stack columns on mobile */
+  .w-col { width: 100%; float: none; }
+  .column, .column-2 { padding-left: 0; padding-right: 0; }
+
+  /* Illustration grid goes single column */
+  .grid { grid-template-columns: 1fr; }
+
+  /* Single image overlay — natural ratio on mobile */
+  #gallery-overlay-img {
+    height: auto;
+    width: 90vw;
+    max-width: 90vw;
+    max-height: none;
+  }
+
+  /* Gallery overlay — vertical scroll on mobile */
+  .overlay-scroll-strip {
+    flex-direction: column;
+    overflow-x: visible;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    cursor: default;
+    max-height: 80vh;
+  }
+  .gallery-overlay-img-scroll {
+    height: auto;
+    width: 85vw;
+    scroll-snap-align: start;
+  }
+
+  /* Side-by-side overlay stacks vertically on mobile */
+  #gallery-overlay-content.multi {
+    flex-direction: column;
+    gap: 12px;
+    max-width: 85vw;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+  .gallery-overlay-img-multi {
+    max-width: 85vw;
+    max-height: none;
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* ════════════════════════════════════════
+   RESPONSIVE — 479px
+   ════════════════════════════════════════ */
+@media screen and (max-width: 479px) {
+
+  .heading-jumbo {
+    font-size: 36px;
+    line-height: 48px;
+  }
+
+  .heading-jumbo-small { line-height: 40px; }
+
+  .navigation {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .columns { margin-bottom: 0; }
+
+  .small {
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 200;
+    line-height: 20px;
+  }
+
+  /* Show the mobile banner with correct styling */
+  .banner-div---hide-on-desktop {
+    display: block;
+    background-color: #fff8e3;
+    border: 1px solid #f6d399;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .project-overview-grid,
+  .project-description-grid {
+    width: 100%;
+    max-width: none;
+  }
+}

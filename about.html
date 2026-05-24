@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About — Suum Design</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <nav class="navigation">
+    <div class="navigation-items">
+      <a href="index.html" class="logo-link" aria-label="home">
+        <div class="text-block-3">suum.design</div>
+      </a>
+      <div class="navigation-wrap">
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="index.html" class="navigation-item">Design</a></li>
+          <li><a href="illustration.html" class="navigation-item">Illustration</a></li>
+          <li><a href="about.html" class="navigation-item current">About</a></li>
+        </ul>
+        <button class="menu-button" id="menu-btn" aria-label="menu" aria-expanded="false">
+          <img src="images/menu-icon.png" width="22" alt="">
+        </button>
+      </div>
+    </div>
+    <div class="nav-overlay" id="nav-overlay">
+      <a href="index.html" class="navigation-item">Design</a>
+      <a href="illustration.html" class="navigation-item">Illustration</a>
+      <a href="about.html" class="navigation-item current">About</a>
+    </div>
+  </nav>
+
+  <div class="section">
+    <div class="container-landing">
+      <h1 class="heading-jumbo">I'm a designer, illustrator, and I like everything and anything art-related.</h1>
+      <img src="images/about-photo.jpg" loading="lazy" alt="" class="image-about">
+      <p class="paragraph-bigger">
+        York Sheridan Bachelor of Design &bull; Carte Blanche Creative &bull; Xtreme Labs &bull; Pivotal Labs &bull; ecobee &bull; Ritual &bull; Lotly<br>
+        I'm always interested in trying new things or collaborating on projects.
+      </p>
+    </div>
+  </div>
+
+  <div class="div-block-5"></div>
+
+  <script src="nav.js"></script>
+  <script>
+    const btn = document.getElementById('menu-btn');
+    const overlay = document.getElementById('nav-overlay');
+    btn.addEventListener('click', () => {
+      const open = overlay.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Suum design portfolio</title>
+  <meta property="og:title" content="Suum Design Portfolio">
+  <meta property="og:image" content="images/opengraph.jpg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation — untouched -->
+  <nav class="navigation">
+    <div class="navigation-items">
+      <a href="index.html" class="logo-link" aria-label="home">
+        <div class="text-block-3">suum.design</div>
+      </a>
+      <div class="navigation-wrap">
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="index.html" class="navigation-item current">Design</a></li>
+          <li><a href="illustration.html" class="navigation-item">Illustration</a></li>
+          <li><a href="about.html" class="navigation-item">About</a></li>
+        </ul>
+        <button class="menu-button" id="menu-btn" aria-label="menu" aria-expanded="false">
+          <img src="images/menu-icon.png" width="22" alt="">
+        </button>
+      </div>
+    </div>
+    <div class="nav-overlay" id="nav-overlay">
+      <a href="index.html" class="navigation-item current">Design</a>
+      <a href="illustration.html" class="navigation-item">Illustration</a>
+      <a href="about.html" class="navigation-item">About</a>
+    </div>
+  </nav>
+
+
+  <!-- Magazine layout: left (case studies 60%) + right (gallery 40%) -->
+  <div class="section magazine-section">
+    <div class="container-landing magazine-layout">
+
+      <!-- ── LEFT COLUMN: Case Studies ── -->
+      <div class="magazine-left">
+
+        <div class="gallery-header">
+          <span class="gallery-label">Case studies</span>
+          <hr class="gallery-rule">
+        </div>
+
+        <div class="case-study-list">
+
+          <!-- ecobee -->
+          <a href="work/ecobee.html" class="case-study-card">
+            <div class="case-study-image-wrap">
+              <img src="images/ecobee-thumbnail.jpg" loading="lazy" alt="ecobee project thumbnail">
+            </div>
+            <div class="case-study-meta">
+              <div class="label">ecobee 2018</div>
+              <div class="heading">Concept of home</div>
+              <span class="read-link">Read case study</span>
+            </div>
+          </a>
+
+          <!-- Ritual -->
+          <a href="work/ritual.html" class="case-study-card">
+            <div class="case-study-image-wrap">
+              <img src="images/ritual-thumbnail.jpg" loading="lazy" alt="Ritual project thumbnail">
+            </div>
+            <div class="case-study-meta">
+              <div class="label">Ritual 2020</div>
+              <div class="heading">Scheduled ordering</div>
+              <span class="read-link">Read case study</span>
+            </div>
+          </a>
+
+          <!-- Co.Lab -->
+          <a href="work/colab.html" class="case-study-card">
+            <div class="case-study-image-wrap">
+              <img src="images/colab-thumbnail.jpg" loading="lazy" alt="Co.Lab project thumbnail">
+            </div>
+            <div class="case-study-meta">
+              <div class="label">Co.Lab 2023</div>
+              <div class="heading">Branding &amp; website</div>
+              <span class="read-link">Read case study</span>
+            </div>
+          </a>
+
+        </div>
+      </div><!-- /magazine-left -->
+
+      <!-- ── RIGHT COLUMN ── -->
+      <div class="magazine-right">
+
+        <!-- Projects — 1 per row -->
+        <div class="gallery-header">
+          <span class="gallery-label">Projects</span>
+          <hr class="gallery-rule">
+        </div>
+
+        <div class="projects-list">
+
+          <div class="gallery-item">
+            <img src="images/vinovoss-thumbnail.jpg" loading="lazy" alt="VinoVoss">
+            <div class="gallery-item-meta">VinoVoss 2024</div>
+            <div class="gallery-item-title">AI-powered wine discovery app</div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="images/oto-thumbnail.jpg" loading="lazy" alt="OtO Lawn">
+            <div class="gallery-item-meta">OtO Lawn 2024</div>
+            <div class="gallery-item-title">Smart lawncare mobile app</div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="images/lotly-thumbnail.jpg" loading="lazy" alt="Lotly">
+            <div class="gallery-item-meta">Lotly 2023</div>
+            <div class="gallery-item-title">Real estate investing platform</div>
+          </div>
+
+        </div>
+
+      </div><!-- /magazine-right -->
+
+    </div>
+  </div><!-- /magazine-section -->
+
+  <!-- Full-width Design gallery -->
+  <div class="section design-gallery-section">
+    <div class="gallery-header">
+      <span class="gallery-label">Design gallery</span>
+      <hr class="gallery-rule">
+    </div>
+
+    <div class="gallery-grid gallery-grid--4col">
+
+      <div class="gallery-item" data-overlay="images/aw_02.png,images/aw_03.png">
+        <img src="images/aw_01.png" loading="lazy" alt="ecobee Apple Watch">
+        <div class="gallery-item-meta">ecobee 2018 – Apple Watch companion app</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/ritual-discovery.jpg" loading="lazy" alt="Ritual discovery">
+        <div class="gallery-item-meta">Ritual 2020 – Discovery feature on iOS app</div>
+      </div>
+
+      <div class="gallery-item" data-overlay="images/cineplex01.png,images/cineplex02.png,images/cineplex03.png,images/cineplex04.png" data-overlay-scroll="true">
+        <img src="images/cineplex02.png" loading="lazy" alt="Cineplex iPad app">
+        <div class="gallery-item-meta">Pivotal Labs 2014 – Cineplex iPad app</div>
+      </div>
+
+      <div class="gallery-item" data-overlay="images/boston01.png,images/boston02.png">
+        <img src="images/boston01.png" loading="lazy" alt="Boston Pizza iOS app">
+        <div class="gallery-item-meta">Pivotal Labs 2014 – Boston Pizza iOS app</div>
+      </div>
+
+      <div class="gallery-item" data-overlay="images/fo02.png,images/fo03.png">
+        <img src="images/fo01.png" loading="lazy" alt="Frank & Oak iPad app">
+        <div class="gallery-item-meta">Pivotal Labs 2014 – Frank &amp; Oak iPad app</div>
+      </div>
+
+      <div class="gallery-item" data-overlay="images/mec_01.png,images/mec_02.png">
+        <img src="images/mec_01.png" loading="lazy" alt="MEC responsive web">
+        <div class="gallery-item-meta">Pivotal Labs 2013 – MEC responsive web</div>
+      </div>
+
+      <div class="gallery-item" data-overlay="images/mdao_01.png,images/mdao_02.png,images/mdao_03.png,images/mdao_04.png,images/mdao_05.png,images/mdao_06.png" data-overlay-scroll="true">
+        <img src="images/mdao_02.png" loading="lazy" alt="Mood Disorder's Association 25th anniversary book">
+        <div class="gallery-item-meta">Reactor Art and Design 2011 – Mood Disorder's Association 25th anniversary book</div>
+      </div>
+
+    </div>
+  </div><!-- /design-gallery-section -->
+
+  <div class="div-block"></div>
+
+  <!-- Gallery overlay -->
+  <div id="gallery-overlay">
+    <div id="gallery-overlay-backdrop"></div>
+    <div id="gallery-overlay-content">
+    </div>
+  </div>
+
+  <script src="nav.js"></script>
+  <script>
+    // Nav hamburger
+    const btn = document.getElementById('menu-btn');
+    const navOverlay = document.getElementById('nav-overlay');
+    btn.addEventListener('click', () => {
+      const open = navOverlay.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open);
+    });
+
+    // Gallery overlay
+    const galleryOverlay  = document.getElementById('gallery-overlay');
+    const galleryBackdrop = document.getElementById('gallery-overlay-backdrop');
+    const galleryContent  = document.getElementById('gallery-overlay-content');
+
+    document.querySelectorAll('.gallery-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const thumb  = item.querySelector('img');
+        const rect   = item.getBoundingClientRect();
+        const originX = ((rect.left + rect.width  / 2) / window.innerWidth  * 100).toFixed(1);
+        const originY = ((rect.top  + rect.height / 2) / window.innerHeight * 100).toFixed(1);
+
+        // Clear previous content
+        galleryContent.innerHTML = '';
+        galleryContent.className = '';
+
+        const overrideAttr = item.dataset.overlay;
+        if (overrideAttr && item.dataset.overlayScroll) {
+          // Scrollable multi-image strip
+          galleryContent.classList.add('multi-scroll');
+          const strip = document.createElement('div');
+          strip.className = 'overlay-scroll-strip';
+          overrideAttr.split(',').forEach(src => {
+            const img = document.createElement('img');
+            img.src = src.trim();
+            img.className = 'gallery-overlay-img-scroll';
+            strip.appendChild(img);
+          });
+          galleryContent.appendChild(strip);
+          // Drag to scroll
+          let isDown = false, startX, scrollLeft;
+          strip.addEventListener('mousedown', e => { isDown = true; startX = e.pageX - strip.offsetLeft; scrollLeft = strip.scrollLeft; strip.style.cursor = 'grabbing'; });
+          strip.addEventListener('mouseleave', () => { isDown = false; strip.style.cursor = 'grab'; });
+          strip.addEventListener('mouseup', () => { isDown = false; strip.style.cursor = 'grab'; });
+          strip.addEventListener('mousemove', e => { if (!isDown) return; e.preventDefault(); strip.scrollLeft = scrollLeft - (e.pageX - strip.offsetLeft - startX) * 1.5; });
+        } else if (overrideAttr) {
+          // Multi-image: show listed images side by side
+          galleryContent.classList.add('multi');
+          overrideAttr.split(',').forEach(src => {
+            const img = document.createElement('img');
+            img.src = src.trim();
+            img.className = 'gallery-overlay-img-multi';
+            galleryContent.appendChild(img);
+          });
+        } else {
+          // Single image: show thumbnail at full size
+          const img = document.createElement('img');
+          img.src   = thumb.src;
+          img.alt   = thumb.alt;
+          img.id    = 'gallery-overlay-img';
+          const wrapper = document.createElement('div');
+          wrapper.id = 'gallery-img-wrapper';
+          wrapper.appendChild(img);
+          galleryContent.appendChild(wrapper);
+        }
+
+        galleryContent.style.transformOrigin = `${originX}% ${originY}%`;
+        galleryOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function closeGalleryOverlay() {
+      galleryOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    galleryBackdrop.addEventListener('click', closeGalleryOverlay);
+    document.addEventListener('keydown', e => {
+      if (!galleryOverlay.classList.contains('active')) return;
+      if (e.key === 'Escape') closeGalleryOverlay();
+    });
+
+    // Scroll reveal
+    document.querySelectorAll('.case-study-card').forEach((el, i) => {
+      el.classList.add('scroll-reveal');
+      el.style.transitionDelay = `${i * 0.12}s`;
+    });
+
+    // Projects list — single column, no stagger
+    document.querySelectorAll('.projects-list .gallery-item').forEach(el => {
+      el.classList.add('scroll-reveal');
+    });
+
+    // Design gallery — 3-column stagger
+    document.querySelectorAll('.gallery-grid .gallery-item').forEach((el, i) => {
+      el.classList.add('scroll-reveal');
+      const col = i % 3;
+      if (col === 1) el.style.transitionDelay = '0.12s';
+      else if (col === 2) el.style.transitionDelay = '0.24s';
+    });
+
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.scroll-reveal').forEach(el => revealObserver.observe(el));
+  </script>
+</body>
+</html>

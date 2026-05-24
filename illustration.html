@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Illustration — Suum Design</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <nav class="navigation">
+    <div class="navigation-items">
+      <a href="index.html" class="logo-link" aria-label="home">
+        <div class="text-block-3">suum.design</div>
+      </a>
+      <div class="navigation-wrap">
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="index.html" class="navigation-item">Design</a></li>
+          <li><a href="illustration.html" class="navigation-item current">Illustration</a></li>
+          <li><a href="about.html" class="navigation-item">About</a></li>
+        </ul>
+        <button class="menu-button" id="menu-btn" aria-label="menu" aria-expanded="false">
+          <img src="images/menu-icon.png" width="22" alt="">
+        </button>
+      </div>
+    </div>
+    <div class="nav-overlay" id="nav-overlay">
+      <a href="index.html" class="navigation-item">Design</a>
+      <a href="illustration.html" class="navigation-item current">Illustration</a>
+      <a href="about.html" class="navigation-item">About</a>
+    </div>
+  </nav>
+
+  <!-- Client work -->
+  <div class="section">
+    <div class="container-landing">
+      <div class="gallery-header">
+        <span class="gallery-label">Client work — withmantle.com blog images</span>
+        <hr class="gallery-rule">
+      </div>
+    </div>
+  </div>
+
+  <div class="section bottom-margin">
+    <div class="container-landing">
+      <div class="grid">
+        <img src="images/mantle-blog-meet.jpg" loading="lazy" alt="">
+        <img src="images/mantle-blog-safe.jpg" loading="lazy" alt="">
+        <img src="images/mantle-blog-googlecloud.jpg" loading="lazy" alt="">
+        <img src="images/mantle-blog-safe-vs-notes.jpg" loading="lazy" alt="">
+        <img src="images/mantle-blog-partnerships.jpg" loading="lazy" alt="">
+        <img src="images/mantle-blog-409a.jpg" loading="lazy" alt="">
+      </div>
+    </div>
+  </div>
+
+  <!-- Wearables -->
+  <div class="section">
+    <div class="container-landing">
+      <div class="gallery-header">
+        <span class="gallery-label">Wearables</span>
+        <hr class="gallery-rule">
+      </div>
+    </div>
+  </div>
+
+  <div class="section bottom-margin">
+    <div class="container-landing">
+      <div class="grid">
+        <img src="images/wearable-sailormoon-trust.jpg" loading="lazy" alt="">
+        <img src="images/wearable-sailormoon-eyes.jpg" loading="lazy" alt="">
+        <img src="images/wearable-nasa.jpg" loading="lazy" alt="">
+      </div>
+    </div>
+  </div>
+
+  <!-- Sugar, spice -->
+  <div class="section">
+    <div class="container-landing">
+      <div class="gallery-header">
+        <span class="gallery-label">Sugar, spice and everything nice</span>
+        <hr class="gallery-rule">
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container-landing">
+      <div class="grid">
+        <img src="images/art-fiveguys.jpg" loading="lazy" alt="">
+        <img src="images/art-plant.jpg" loading="lazy" alt="">
+        <img src="images/art-girl.jpg" loading="lazy" alt="">
+        <img src="images/art-howl.jpg" loading="lazy" alt="">
+        <img src="images/art-sailormoon.jpg" loading="lazy" alt="">
+        <img src="images/art-redplant.jpg" loading="lazy" alt="">
+        <img src="images/art-simple-03.jpg" loading="lazy" alt="">
+        <img src="images/art-simple-04.jpg" loading="lazy" alt="">
+        <img src="images/art-simple-02.jpg" loading="lazy" alt="">
+      </div>
+    </div>
+  </div>
+
+  <div class="div-block"></div>
+
+  <script src="nav.js"></script>
+  <script>
+    const btn = document.getElementById('menu-btn');
+    const overlay = document.getElementById('nav-overlay');
+    btn.addEventListener('click', () => {
+      const open = overlay.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open);
+    });
+
+    // Scroll reveal — 3-column stagger
+    document.querySelectorAll('.grid img').forEach((el, i) => {
+      el.classList.add('scroll-reveal');
+      const col = i % 3;
+      if (col === 1) el.style.transitionDelay = '0.15s';
+      if (col === 2) el.style.transitionDelay = '0.30s';
+    });
+
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.scroll-reveal').forEach(el => revealObserver.observe(el));
+  </script>
+</body>
+</html>
