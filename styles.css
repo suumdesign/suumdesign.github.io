@@ -150,7 +150,7 @@ label {
 .navigation-item.current:hover { opacity: 0.8; color: #000; }
 .navigation-item.current:active { opacity: 0.7; color: #000; }
 
-/* hamburger button — hidden on desktop */
+/* hamburger button â€” hidden on desktop */
 .menu-button {
   display: none;
   cursor: pointer;
@@ -276,8 +276,8 @@ label {
 
 /* --- CSS Grids --- */
 
-/* Project overview: 4-col grid where H1 spans row 1 cols 1–3,
-   About spans row 2 cols 1–2, Contributions spans row 2 cols 3–4 */
+/* Project overview: 4-col grid where H1 spans row 1 cols 1â€“3,
+   About spans row 2 cols 1â€“2, Contributions spans row 2 cols 3â€“4 */
 .project-overview-grid {
   display: grid;
   grid-column-gap: 50px;
@@ -287,15 +287,15 @@ label {
   margin-bottom: 135px;
 }
 
-/* First child (heading) spans columns 1–3 in row 1 */
+/* First child (heading) spans columns 1â€“3 in row 1 */
 .project-overview-grid > :first-child {
   grid-area: 1 / 1 / 2 / 4;
 }
-/* Second child (About company) spans columns 1–2 in row 2 */
+/* Second child (About company) spans columns 1â€“2 in row 2 */
 .project-overview-grid > :nth-child(2) {
   grid-area: 2 / 1 / 3 / 3;
 }
-/* Third child (My Contributions) spans columns 3–4 in row 2 */
+/* Third child (My Contributions) spans columns 3â€“4 in row 2 */
 .project-overview-grid > :nth-child(3) {
   grid-area: 2 / 3 / 3 / 5;
 }
@@ -342,9 +342,9 @@ label {
 .banner-div---hide-on-desktop { display: none; }
 .seciton-hide { display: none; }
 
-/* ════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    SCROLL REVEAL
-   ════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
 .scroll-reveal {
   opacity: 0;
@@ -362,9 +362,9 @@ a.scroll-reveal {
   transform: translateY(0);
 }
 
-/* ════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    GALLERY OVERLAY
-   ════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
 .gallery-item {
   cursor: pointer;
@@ -424,7 +424,7 @@ a.scroll-reveal {
   overflow: hidden;
 }
 
-/* The permanent in-flow image — determines wrapper size */
+/* The permanent in-flow image â€” determines wrapper size */
 #gallery-overlay-img {
   display: block;
   height: 75vh;
@@ -433,44 +433,26 @@ a.scroll-reveal {
   max-height: 85vw; /* prevent stretching on narrow screens */
 }
 
-/* Multi-image overlay — side by side (2 images) */
+/* Multi-image overlay â€” scrollable row, same style as Apple Watch */
 #gallery-overlay-content.multi {
   display: flex;
   flex-direction: row;
   gap: 16px;
   align-items: center;
-  justify-content: center;
   max-width: 85vw;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
+#gallery-overlay-content.multi::-webkit-scrollbar { display: none; }
 .gallery-overlay-img-multi {
   display: block;
   max-height: 75vh;
-  max-width: calc(42.5vw - 8px);
+  max-width: 40vw;
   width: auto;
   height: auto;
-}
-
-/* Scrollable multi-image overlay (4+ images) */
-#gallery-overlay-content.multi-scroll {
-  width: 85vw;
-}
-.overlay-scroll-strip {
-  display: flex;
-  gap: 12px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  cursor: grab;
-  padding-bottom: 4px;
-}
-.overlay-scroll-strip::-webkit-scrollbar { display: none; }
-.gallery-overlay-img-scroll {
-  display: block;
-  height: 75vh;
-  width: auto;
   flex: 0 0 auto;
-  scroll-snap-align: start;
 }
 
 /* Dynamically created slide-in image (absolutely fills the wrapper) */
@@ -484,9 +466,9 @@ a.scroll-reveal {
   display: block;
 }
 
-/* ════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    MAGAZINE LAYOUT (index page)
-   ════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
 .magazine-section { margin-top: 0; }
 
@@ -511,7 +493,7 @@ a.scroll-reveal {
   padding-top: 260px;
 }
 
-/* Projects list — single column */
+/* Projects list â€” single column */
 .projects-list {
   display: flex;
   flex-direction: column;
@@ -544,7 +526,7 @@ a.scroll-reveal {
   margin: 0;
 }
 
-/* ── Case study cards ── */
+/* â”€â”€ Case study cards â”€â”€ */
 .case-study-list {
   display: flex;
   flex-direction: column;
@@ -577,7 +559,7 @@ a.scroll-reveal {
 .case-study-meta .label  { margin-top: 0; }
 .case-study-meta .heading { margin-top: 4px; margin-bottom: 0; }
 
-/* "Read case study" — underline draws itself in on card hover */
+/* "Read case study" â€” underline draws itself in on card hover */
 .read-link {
   display: inline-block;
   position: relative;
@@ -607,7 +589,7 @@ a.scroll-reveal {
   width: 100%;
 }
 
-/* ── Design gallery grid ── */
+/* â”€â”€ Design gallery grid â”€â”€ */
 .gallery-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -652,7 +634,7 @@ a.scroll-reveal {
   color: #000;
 }
 
-/* ── Brand guidelines horizontal scroll ── */
+/* â”€â”€ Brand guidelines horizontal scroll â”€â”€ */
 .brand-scroll-header {
   margin-bottom: 24px;
 }
@@ -678,20 +660,15 @@ a.scroll-reveal {
   display: flex;
   gap: 3px;
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-padding-left: var(--section-margin);
   height: 60vh;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  cursor: grab;
   padding-left: var(--section-margin);
 }
 
 .brand-scroll::-webkit-scrollbar { display: none; }
-.brand-scroll.is-grabbing { cursor: grabbing; user-select: none; }
 
 .brand-scroll-item {
-  scroll-snap-align: start;
   flex: 0 0 auto;
   height: 100%;
   overflow: hidden;
@@ -705,9 +682,9 @@ a.scroll-reveal {
   object-fit: unset;
 }
 
-/* ════════════════════════════════════════
-   RESPONSIVE — 991px
-   ════════════════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   RESPONSIVE â€” 991px
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 @media screen and (max-width: 991px) {
 
   /* Show hamburger, hide desktop menu */
@@ -773,9 +750,9 @@ a.scroll-reveal {
   }
 }
 
-/* ════════════════════════════════════════
-   RESPONSIVE — 767px
-   ════════════════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   RESPONSIVE â€” 767px
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 @media screen and (max-width: 767px) {
 
   .section { margin-left: 15px; margin-right: 15px; }
@@ -804,7 +781,7 @@ a.scroll-reveal {
 
   /* Gallery drops to 2 columns on small screens */
   .gallery-grid { grid-template-columns: 1fr 1fr; gap: 12px 10px; }
-  .gallery-grid--4col { grid-template-columns: 1fr 1fr; gap: 24px 16px; }  /* 3-col → 2-col on mobile */
+  .gallery-grid--4col { grid-template-columns: 1fr 1fr; gap: 24px 16px; }  /* 3-col â†’ 2-col on mobile */
 
   .navigation { padding: 20px 30px; }
   .logo-link  { padding-left: 0; }
@@ -816,7 +793,7 @@ a.scroll-reveal {
   /* Illustration grid goes single column */
   .grid { grid-template-columns: 1fr; }
 
-  /* Single image overlay — natural ratio on mobile */
+  /* Single image overlay â€” natural ratio on mobile */
   #gallery-overlay-img {
     height: auto;
     width: 90vw;
@@ -824,22 +801,7 @@ a.scroll-reveal {
     max-height: none;
   }
 
-  /* Gallery overlay — vertical scroll on mobile */
-  .overlay-scroll-strip {
-    flex-direction: column;
-    overflow-x: visible;
-    overflow-y: auto;
-    scroll-snap-type: y mandatory;
-    cursor: default;
-    max-height: 80vh;
-  }
-  .gallery-overlay-img-scroll {
-    height: auto;
-    width: 85vw;
-    scroll-snap-align: start;
-  }
-
-  /* Side-by-side overlay stacks vertically on mobile */
+  /* Multi-image overlay â€” vertical stack on mobile */
   #gallery-overlay-content.multi {
     flex-direction: column;
     gap: 12px;
@@ -855,9 +817,9 @@ a.scroll-reveal {
   }
 }
 
-/* ════════════════════════════════════════
-   RESPONSIVE — 479px
-   ════════════════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   RESPONSIVE â€” 479px
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 @media screen and (max-width: 479px) {
 
   .heading-jumbo {
