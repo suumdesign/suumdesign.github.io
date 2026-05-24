@@ -182,23 +182,11 @@
       btn.setAttribute('aria-expanded', open);
     });
 
-    // Drag to scroll
+    // Mouse wheel → horizontal scroll
     const scroll = document.getElementById('brand-scroll');
-    let isDown = false, startX, scrollLeft;
-    scroll.addEventListener('mousedown', e => {
-      isDown = true;
-      scroll.classList.add('is-grabbing');
-      startX = e.pageX - scroll.offsetLeft;
-      scrollLeft = scroll.scrollLeft;
-    });
-    scroll.addEventListener('mouseleave', () => { isDown = false; scroll.classList.remove('is-grabbing'); });
-    scroll.addEventListener('mouseup',    () => { isDown = false; scroll.classList.remove('is-grabbing'); });
-    scroll.addEventListener('mousemove',  e => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - scroll.offsetLeft;
-      scroll.scrollLeft = scrollLeft - (x - startX) * 1.5;
-    });
+    scroll.addEventListener('wheel', e => {
+      if (e.deltaY !== 0) { e.preventDefault(); scroll.scrollLeft += e.deltaY; }
+    }, { passive: false });
   </script>
 </body>
 </html>
